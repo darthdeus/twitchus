@@ -1,24 +1,19 @@
 # Twitchus
 
-TODO: Write a gem description
+Twitchus is a gem for managing a list of Twitch.tv streams.
+You just give it a list of streams and it will check their status
+and additional infromation and save all the data into Redis.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'twitchus'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install twitchus
 
 ## Usage
 
-TODO: Write usage instructions here
+Twitchus is designed to be run via cron on a regular basis. For that
+it needs a config file which lists all the stream names.
+
+Then simply run `twitchus -c config.yml`
 
 ## Contributing
 
@@ -27,3 +22,4 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+6. Be happy!
