@@ -9,4 +9,4 @@ Feature: Configuration file
 
   Scenario: pass non-existent config file
     When I run `twitchus -c foo.yml`
-    Then the exit status should be 0
+    Then the exit status should be 1

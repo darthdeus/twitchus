@@ -19,6 +19,7 @@ if options[:config].nil?
   puts option_parser.help
   exit 1
 else
+  exit 1 unless File.exists? options[:config]
   exit 0
 end
 
