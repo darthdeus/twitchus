@@ -11,4 +11,12 @@ option_parser = OptionParser.new do |opts|
 end
 
 option_parser.parse!
-puts options.inspect
+if ARGV.empty?
+  puts "Error: You must specify a config file"
+  puts
+  puts
+  puts option_parser.help
+  exit 1
+else
+end
+
