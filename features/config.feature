@@ -8,5 +8,5 @@ Feature: Configuration file
     Then the exit status should be 1
 
   Scenario: pass non-existent config file
-    When I run `twitchus` with "-c foo.yml"
+    When I run `twitchus -c foo.yml`
     Then the exit status should be 0
