@@ -4,7 +4,7 @@ require "optparse"
 options = {}
 option_parser = OptionParser.new do |opts|
 
-  opts.on("-c CONFIG") do |config|
+  opts.on("-c CONFIG", "Specify a config file") do |config|
     options[:config] = config
   end
 
