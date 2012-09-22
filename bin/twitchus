@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require "optparse"
+
+options = {}
+option_parser = OptionParser.new do |opts|
+
+  opts.on("-c CONFIG") do |config|
+    options[:config] = config
+  end
+
+end
+
+option_parser.parse!
+puts options.inspect
