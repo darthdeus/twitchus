@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Twitchus::VERSION
   gem.authors       = ["Jakub Arnold"]
   gem.email         = ["darthdeus@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Twitchus is a gem for managing a list of Twitch.tv streams}
+  gem.summary       = %q{Twitchus is a gem for managing a list of Twitch.tv streams}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
