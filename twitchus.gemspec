@@ -17,9 +17,11 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_development_dependency "pry"
-  gem.add_development_dependency "rake"
-  gem.add_development_dependency "rspec"
-  gem.add_development_dependency "cucumber"
-  gem.add_development_dependency "aruba"
+  gem.add_dependency "jtv", "~> 0.0.3"
+
+  gem.add_development_dependency "pry",      "~> 0.9.10"
+  gem.add_development_dependency "rake",     "~> 0.9.2.2"
+  gem.add_development_dependency "rspec",    "~> 2.11.0"
+  gem.add_development_dependency "cucumber", "~> 1.2.1"
+  gem.add_development_dependency "aruba",    "~> 0.4.11"
 end
