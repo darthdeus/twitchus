@@ -5,7 +5,9 @@ module Twitchus
     attr_reader :streams
 
     def load(file)
-      @streams = ["scvrush"]
+      File.open(file) do |f|
+        @streams = f.readlines.map(&:strip)
+      end
     end
   end
 end

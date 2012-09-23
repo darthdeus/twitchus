@@ -1,14 +1,22 @@
 require "spec_helper"
 
 
-describe Twitchus::Config do
+module Twitchus
+  describe Config do
 
-  let(:config) { Twitchus::Config.new }
+    let(:config) { Config.new }
 
-  it "can load a file" do
-    File.write("./tmp/config.yml", "scvrush")
-    config.load("./tmp/config.yml")
-    config.streams.should include("scvrush")
+    it "can load a file" do
+      File.write("./tmp/config.yml", "scvrush1")
+      config.load("./tmp/config.yml")
+      config.streams.should include("scvrush1")
+    end
+
+    it "can load config with multiple streams" do
+      File.write("./tmp/config.yml", "scvrush1\nscvrush2")
+      config.load("./tmp/config.yml")
+      config.streams.should == %w{scvrush1 scvrush2}
+    end
+
   end
-
 end
