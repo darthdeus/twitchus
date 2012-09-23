@@ -32,7 +32,7 @@ module Twitchus
     end
 
     it "exits with 1 with invalid options" do
-      cli_test(%w{-g foo}, {}, 1, /invalid option/)
+      cli_test(%w{-w}, {}, 1, /invalid option/)
       cli_test(%w{-g foo}, {}, 1, /invalid option/)
     end
 
