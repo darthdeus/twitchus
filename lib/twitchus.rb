@@ -1,6 +1,9 @@
 require "twitchus/version"
+require "twitchus/cli"
+
 
 module Twitchus
+
   class Config
     attr_reader :streams
 

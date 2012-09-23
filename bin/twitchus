@@ -1,25 +1,4 @@
 #!/usr/bin/env ruby
-require "optparse"
 
-options = {}
-option_parser = OptionParser.new do |opts|
-
-  opts.on("-c CONFIG", "Specify a config file") do |config|
-    options[:config] = config
-  end
-
-end
-
-option_parser.parse!
-
-if options[:config].nil?
-  puts "Error: You must specify a config file"
-  puts
-  puts
-  puts option_parser.help
-  exit 1
-else
-  exit 1 unless File.exists? options[:config]
-  exit 0
-end
-
+require "twitchus"
+Twitchus::Cli.new.run(ARGV, ENV)
