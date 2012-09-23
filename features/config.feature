@@ -10,3 +10,12 @@ Feature: Configuration file
   Scenario: pass non-existent config file
     When I run `twitchus -c foo.yml`
     Then the exit status should be 1
+
+  Scenario: pass an existing file
+    Given a file named "config.yml" with:
+    """
+    foo
+    """
+    When I run `twitchus -c config.yml`
+    Then the exit status should be 0
+
