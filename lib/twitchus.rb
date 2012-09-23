@@ -1,5 +1,11 @@
 require "twitchus/version"
 
 module Twitchus
-  # Your code goes here...
+  class Config
+    attr_reader :streams
+
+    def load(file)
+      @streams = ["scvrush"]
+    end
+  end
 end
