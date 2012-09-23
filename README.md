@@ -1,4 +1,4 @@
-# Twitchus ![travis](https://secure.travis-ci.org/darthdeus/twitchus.png) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/darthdeus/twitchus)
+# Twitchus [![Travis-CI](https://secure.travis-ci.org/darthdeus/twitchus.png)](http://travis-ci.org/#!/darthdeus/twitchus) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/darthdeus/twitchus)
 
 Twitchus is a gem for managing a list of Twitch.tv streams.
 You just give it a list of streams and it will check their status
