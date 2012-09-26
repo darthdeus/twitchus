@@ -14,6 +14,5 @@ task :test => :speed
 
 task :default do
   Rake::Task["spec"].invoke
-  Rake::Task["features"].invoke
 end
 
