@@ -45,7 +45,13 @@ module Twitchus
     end
 
     it "exits with 0 if an existing config file is given" do
-      File.open("./tmp/config.yml", "w") { |f| f.puts "scvrush1" }
+      file =<<YAML
+streams:
+  - scvrush2
+YAML
+      File.write("./tmp/config.yml", file)
+      Twitchus::Worker.stub(:new) { stub.as_null_object }
+
       cli_test(%w{-c ./tmp/config.yml}, {}, 0)
     end
 

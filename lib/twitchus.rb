@@ -3,6 +3,7 @@ require "twitchus/config"
 require "twitchus/cli"
 require "twitchus/checker"
 require "twitchus/storage"
+require "twitchus/worker"
 
 module Twitchus
 

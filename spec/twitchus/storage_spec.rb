@@ -24,6 +24,16 @@ module Twitchus
       storage.push nil
     end
 
+    it "can empty the storage" do
+      client = mock(:redis)
+      client.should_receive(:expire).with(:key, -1)
+
+      Redis.should_receive(:new) { client }
+
+      storage = Storage.new(1, 1, :key)
+      storage.clear
+    end
+
   end
 end
 

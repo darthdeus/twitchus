@@ -34,6 +34,9 @@ module Twitchus
 
       if @options[:config]
         if File.exists? @options[:config]
+          worker = Twitchus::Worker.new(@options[:config])
+          worker.run
+
           exit 0
         else
           raise OptionParser::ParseError, "The config file you specified doesn't exist"

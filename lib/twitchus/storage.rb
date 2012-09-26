@@ -9,8 +9,13 @@ module Twitchus
       @key = key
     end
 
+    # Add an item to the list specified in config
     def push(item)
       @client.lpush(@key, item) if item
+    end
+
+    def clear
+      @client.expire @key, -1
     end
 
   end
