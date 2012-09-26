@@ -4,7 +4,8 @@ require "json"
 module Twitchus
   class Checker
 
-    def initialize
+    def check_all(channels)
+      channels.select { |channel| online?(channel) }
     end
 
     def check(channel)

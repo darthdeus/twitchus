@@ -18,6 +18,15 @@ module Twitchus
       end
     end
 
+    describe "#check_all" do
+
+      it "selects only those channels which are online" do
+        VCR.use_cassette "justin.tv", record: :new_episodes do
+          c.check_all(%w{dreamhacktv scvrush1}).should == ["dreamhacktv"]
+        end
+      end
+    end
+
   end
 
 end
