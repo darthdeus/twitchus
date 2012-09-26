@@ -6,14 +6,13 @@ module Twitchus
 
     let(:config) { Config.new }
 
-    it "can load a file" do
-      File.write("./tmp/config.yml", "scvrush1")
-      config.load("./tmp/config.yml")
-      config.streams.should include("scvrush1")
-    end
-
     it "can load config with multiple streams" do
-      File.write("./tmp/config.yml", "scvrush1\nscvrush2")
+      file =<<YAML
+streams:
+  - scvrush1
+  - scvrush2
+YAML
+      File.write("./tmp/config.yml", file)
       config.load("./tmp/config.yml")
       config.streams.should == %w{scvrush1 scvrush2}
     end
