@@ -18,6 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency "rest-client", "~> 1.6.7"
+  gem.add_dependency "redis",       "~> 3.0.1"
 
   gem.add_development_dependency "webmock",  "~> 1.8.10"
   gem.add_development_dependency "vcr",      "~> 2.2.5"
