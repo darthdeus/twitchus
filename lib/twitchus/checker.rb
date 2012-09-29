@@ -4,6 +4,11 @@ require "json"
 module Twitchus
   class Checker
 
+    def fetch_all(channels)
+      channels.map { |channel| check(channel) }.select { |c| !c.nil? }
+    end
+
+    # Return a list of online channel names
     def check_all(channels)
       channels.select { |channel| online?(channel) }
     end

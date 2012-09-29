@@ -3,4 +3,13 @@ port: 6379
 key: streams
 streams:
   - scvrush1
+  - dragon
+  - dignitasapollo
+  - empiretvkas
+  - mstephano
+  - dignitasselect
+  - whitera
+  - followgrubby
+  - liquidret
+  - crank
   - ConsoleCombat
