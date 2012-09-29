@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-require "twitchus"
+require_relative "../lib/twitchus"
 Twitchus::Cli.new.run(ARGV, ENV)

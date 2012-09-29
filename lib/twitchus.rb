@@ -1,9 +1,9 @@
-require "twitchus/version"
-require "twitchus/config"
-require "twitchus/cli"
-require "twitchus/checker"
-require "twitchus/storage"
-require "twitchus/worker"
+require_relative "twitchus/version"
+require_relative "twitchus/config"
+require_relative "twitchus/cli"
+require_relative "twitchus/checker"
+require_relative "twitchus/storage"
+require_relative "twitchus/worker"
 
 module Twitchus
 
