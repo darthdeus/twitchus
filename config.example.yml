@@ -1,0 +1,5 @@
+host: localhost
+port: 6379
+streams:
+  - scvrush1
+  - scvrush2
