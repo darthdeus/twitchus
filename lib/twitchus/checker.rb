@@ -17,7 +17,10 @@ module Twitchus
       raise ArgumentError, "Channel is required." unless channel
       response = JSON.parse(RestClient.get(base_url + channel))
 
-      return response.first
+      response.first
+    rescue RestClient::BadRequest => e
+      $stderr.puts "RestClient::BadRequest for #{channel}"
+      nil
     end
 
     def online?(channel)
