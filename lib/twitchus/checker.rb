@@ -4,8 +4,8 @@ require "json"
 module Twitchus
   class Checker
 
-    def fetch_all(channels)
-      channels.map { |channel| check(channel) }.select { |c| !c.nil? }
+    def fetch_all(channels, timeout = 0)
+      channels.map { |channel| check(channel); sleep timeout if timeout }.select { |c| !c.nil? }
     end
 
     # Return a list of online channel names
@@ -19,7 +19,7 @@ module Twitchus
 
       response.first
     rescue RestClient::BadRequest => e
-      $stderr.puts "RestClient::BadRequest for #{channel}"
+      $stderr.puts "RestClient::BadRequest for #{channel}, #{e}"
       nil
     end
 

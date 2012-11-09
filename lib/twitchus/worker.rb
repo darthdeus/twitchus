@@ -11,12 +11,14 @@ module Twitchus
       # Empty the online channel list first
       @storage.clear
 
-      online_channels = @checker.fetch_all(@config.channels)
+      online_channels = @checker.fetch_all(@config.channels, 0.5)
       online_channels.each do |channel|
+        next if Integer === channel
+
         data = {
-          name: channel["title"],
-          channel: channel["channel"]["login"],
-          image: channel["channel"]["image_url_huge"]
+          name:    channel["title"],
+          channel: c["login"],
+          image:   c["image_url_huge"]
         }
 
         @storage.push data.to_json
