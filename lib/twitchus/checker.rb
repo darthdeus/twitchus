@@ -38,7 +38,6 @@ module Twitchus
     end
 
     def base_url
-      "http://api.justin.tv/api/stream/list.json?channel="
       "https://api.twitch.tv/kraken/streams/"
     end
   end
