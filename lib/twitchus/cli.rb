@@ -2,7 +2,6 @@ require "optparse"
 
 module Twitchus
   class Cli
-
     attr_reader :options
 
     def initialize
@@ -58,5 +57,4 @@ module Twitchus
     end
 
   end
-
 end
