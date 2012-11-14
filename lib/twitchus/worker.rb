@@ -3,7 +3,7 @@ module Twitchus
     def initialize(config_file)
       @config = Twitchus::Config.new
       @config.load(config_file)
-      @checker = Twitchus::Checker.new
+      @checker = Twitchus::Checker.new(config)
     end
 
     def run

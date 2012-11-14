@@ -21,7 +21,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency "redis",       "~> 3.0.1"
 
   gem.add_development_dependency "webmock",  "~> 1.8.10"
-  gem.add_development_dependency "vcr",      "~> 2.2.5"
   gem.add_development_dependency "pry",      "~> 0.9.10"
   gem.add_development_dependency "rake",     "~> 0.9.2.2"
   gem.add_development_dependency "rspec",    "~> 2.11.0"

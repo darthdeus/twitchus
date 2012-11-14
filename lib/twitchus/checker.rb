@@ -4,8 +4,12 @@ require "json"
 module Twitchus
   class Checker
 
-    def fetch_all(channels, timeout = 0)
-      channels.map { |channel| check(channel); sleep timeout if timeout }.select { |c| !c.nil? }
+    def initialize(config = nil)
+      @config = config
+    end
+
+    def fetch_all(channels)
+      channels.map { |channel| check(channel) }.select { |c| !c.nil? }
     end
 
     # Return a list of online channel names
@@ -15,9 +19,9 @@ module Twitchus
 
     def check(channel)
       raise ArgumentError, "Channel is required." unless channel
-      response = JSON.parse(RestClient.get(base_url + channel))
+      response = RestClient.get(base_url + channel)
 
-      response.first
+      response["stream"]
     rescue RestClient::BadRequest => e
       $stderr.puts "RestClient::BadRequest for #{channel}, #{e}"
       nil
@@ -27,8 +31,15 @@ module Twitchus
       !check(channel).nil?
     end
 
+    def url_for(channel)
+      url = base_url + channel
+      url += "?client_key=#{@config.client_key}" if @config
+      url
+    end
+
     def base_url
       "http://api.justin.tv/api/stream/list.json?channel="
+      "https://api.twitch.tv/kraken/streams/"
     end
   end
 end

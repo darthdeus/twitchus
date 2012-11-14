@@ -21,9 +21,8 @@ module Twitchus
       @data["key"]
     end
 
-    # TODO - remove duplication
-    def channels
-      @streams
+    def client_key
+      @data["client_key"]
     end
 
   end
