@@ -1,5 +1,4 @@
 require "redis"
-require "pry"
 
 module Twitchus
   class Storage
