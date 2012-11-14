@@ -23,7 +23,7 @@ module Twitchus
 
       response["stream"]
     rescue RestClient::BadRequest => e
-      $stderr.puts "RestClient::BadRequest for #{channel}, #{e}"
+      $stderr.puts "Request failed due to rate limit, channel: #{channel}, #{e}"
       nil
     end
 

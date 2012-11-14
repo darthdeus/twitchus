@@ -30,7 +30,6 @@ module Twitchus
       end
     end
 
-
     context "with a config" do
       let(:config)  { Struct.new(:client_key).new("foobarkey") }
       let(:checker) { Checker.new(config) }
@@ -41,5 +40,4 @@ module Twitchus
     end
 
   end
-
 end
