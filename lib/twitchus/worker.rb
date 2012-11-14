@@ -11,14 +11,14 @@ module Twitchus
       # Since this can run periodically, clean the list first
       @storage.clear
 
-      online_channels = @checker.fetch_all(@config.channels, 0.5)
-      online_channels.each do |channel|
-        next if Integer === channel
-
+      online_streams = @checker.fetch_all(@config.streams)
+      online_streams.each do |data|
+        channel = data["channel"]
         data = {
-          name:    channel["title"],
-          channel: c["login"],
-          image:   c["image_url_huge"]
+          title:   channel["status"],
+          name:    channel["name"],
+          image:   channel["banner"],
+          preview: data["preview"]
         }
 
         @storage.push data.to_json

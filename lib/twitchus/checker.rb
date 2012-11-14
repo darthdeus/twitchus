@@ -19,6 +19,7 @@ module Twitchus
     def check(channel)
       raise ArgumentError, "Channel is required." unless channel
       response = RestClient.get(base_url + channel)
+      response = JSON.parse(response) if response.is_a?(String)
 
       response["stream"]
     rescue RestClient::BadRequest => e
