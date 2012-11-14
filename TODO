@@ -1,0 +1,1 @@
+Figure out why there is a Service Unavailable exception and handle it accordingly. It should probably notify a exception logging service.
