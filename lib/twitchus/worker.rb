@@ -8,7 +8,7 @@ module Twitchus
 
     def run
       @storage = Twitchus::Storage.new(@config.host, @config.port, @config.key)
-      # Empty the online channel list first
+      # Since this can run periodically, clean the list first
       @storage.clear
 
       online_channels = @checker.fetch_all(@config.channels, 0.5)

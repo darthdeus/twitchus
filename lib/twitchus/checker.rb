@@ -3,7 +3,6 @@ require "json"
 
 module Twitchus
   class Checker
-
     def initialize(config = nil)
       @config = config
     end
