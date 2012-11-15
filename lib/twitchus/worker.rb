@@ -18,7 +18,7 @@ module Twitchus
         data = {
           title:   channel["status"],
           name:    channel["name"],
-          image:   channel["banner"],
+          image:   channel["video_banner"],
           preview: data["preview"]
         }
 
