@@ -1,3 +1,4 @@
+# encoding: utf-8
 require_relative "twitchus/version"
 require_relative "twitchus/config"
 require_relative "twitchus/cli"
