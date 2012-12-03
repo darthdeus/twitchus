@@ -26,6 +26,9 @@ module Twitchus
     rescue RestClient::BadRequest => e
       $stderr.puts "Request failed due to rate limit, channel: #{channel}, #{e}"
       nil
+    rescue RestClient::ResourceNotFound => e
+      $stderr.puts "Stream #{channel} is not available anymore"
+      nil
     end
 
     def online?(channel)
