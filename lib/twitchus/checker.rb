@@ -29,6 +29,9 @@ module Twitchus
     rescue RestClient::ResourceNotFound => e
       $stderr.puts "Stream #{channel} is not available anymore"
       nil
+    rescue RestClient::RequestTimeout => e
+      $stderr.puts "Request to a channel #{channel} timed out"
+      nil
     end
 
     def online?(channel)

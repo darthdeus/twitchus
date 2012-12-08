@@ -13,6 +13,20 @@ module Twitchus
         checker.should be_online("scvrush1")
       end
 
+      it "handles when a request timeouts" do
+        stub_request(:get, "https://api.twitch.tv/kraken/streams/scvrush1").to_timeout
+        checker.should_not be_online("scvrush1")
+      end
+
+      it "handles various http errors" do
+        [400, 404].each do |error|
+          stub_request(:get, "https://api.twitch.tv/kraken/streams/scvrush1")
+            .to_return(status: error)
+
+          checker.should_not be_online("scvrush1")
+        end
+      end
+
       it "can tell if a channel is offline" do
         stub_request(:get, "https://api.twitch.tv/kraken/streams/scvrush1")
           .to_return(status: 200, body: { "stream" => nil }.to_json)
