@@ -3,9 +3,9 @@ require "spec_helper"
 module Twitchus
 
   describe Storage do
+    let(:client) { mock(:redis) }
 
     it "will add things to the given key" do
-      client = mock(:redis)
       client.should_receive(:lpush).with(:key, :item)
 
       Redis.should_receive(:new) { client }
@@ -15,7 +15,6 @@ module Twitchus
     end
 
     it "won't add empty items to the list" do
-      client = mock(:redis)
       client.should_not_receive(:lpush).with(:key, nil)
 
       Redis.should_receive(:new) { client }
@@ -25,7 +24,6 @@ module Twitchus
     end
 
     it "can empty the storage" do
-      client = mock(:redis)
       client.should_receive(:expire).with(:key, -1)
 
       Redis.should_receive(:new) { client }
