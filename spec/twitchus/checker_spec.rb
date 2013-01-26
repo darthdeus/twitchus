@@ -19,7 +19,7 @@ module Twitchus
       end
 
       it "handles various http errors" do
-        [400, 404, 422].each do |error|
+        [400, 404, 422, 503].each do |error|
           stub_request(:get, "https://api.twitch.tv/kraken/streams/scvrush1")
             .to_return(status: error)
 

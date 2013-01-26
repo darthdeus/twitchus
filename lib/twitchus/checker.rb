@@ -35,6 +35,9 @@ module Twitchus
     rescue RestClient::UnprocessableEntity => e
       $stderr.puts "API responded with 422 error #{e}"
       nil
+    rescue RestClient::ServiceUnavailable => e
+      $stderr.puts "API service is not available #{e}"
+      nil
     end
 
     def online?(channel)
