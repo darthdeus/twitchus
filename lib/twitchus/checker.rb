@@ -32,6 +32,9 @@ module Twitchus
     rescue RestClient::RequestTimeout => e
       $stderr.puts "Request to a channel #{channel} timed out"
       nil
+    rescue RestClient::UnprocessableEntity => e
+      $stderr.puts "API responded with 422 error #{e}"
+      nil
     end
 
     def online?(channel)

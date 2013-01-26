@@ -20,10 +20,11 @@ Gem::Specification.new do |gem|
   gem.add_dependency "rest-client", "~> 1.6.7"
   gem.add_dependency "redis",       "~> 3.0.1"
 
-  gem.add_development_dependency "webmock",  "~> 1.8.10"
-  gem.add_development_dependency "pry",      "~> 0.9.10"
-  gem.add_development_dependency "rake",     "~> 0.9.2.2"
-  gem.add_development_dependency "rspec",    "~> 2.11.0"
-  gem.add_development_dependency "cucumber", "~> 1.2.1"
-  gem.add_development_dependency "aruba",    "~> 0.4.11"
+  gem.add_development_dependency "mock_redis", "~> 0.6.1"
+  gem.add_development_dependency "webmock",    "~> 1.8.10"
+  gem.add_development_dependency "pry",        "~> 0.9.10"
+  gem.add_development_dependency "rake",       "~> 0.9.2.2"
+  gem.add_development_dependency "rspec",      "~> 2.11.0"
+  gem.add_development_dependency "cucumber",   "~> 1.2.1"
+  gem.add_development_dependency "aruba",      "~> 0.4.11"
 end
